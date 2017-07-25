@@ -14,7 +14,7 @@ The ipset command doesn't work under OpenVZ. It works fine on dedicated and full
 - 10/22/2015: Changed the documentation, the script should be put in /usr/local/sbin not /usr/local/bin
 
 ## Automatic setup for Debian/Ubuntu based distributions (including vyatta/vyos variants such as Ubiquity EdgeRouters)
-1. `wget https://raw.githubusercontent.com/trick77/ipset-blacklist/master/ipset-blacklist-install.sh`
+1. `wget https://raw.githubusercontent.com/rkitover/ipset-blacklist/master/ipset-blacklist-install.sh`
 2. `sudo sh ./ipset-blacklist-install.sh`
 3. the default operation of the script is to install or repair the installation, preserving the config
 4. if you have a custom /etc/rc.local, check that it got updated correctly (not applicable to vyatta)
@@ -25,9 +25,9 @@ The ipset command doesn't work under OpenVZ. It works fine on dedicated and full
 9. if you did not have fail2ban installed at the time you ran the script and install it later, rerun the script to update the fail2ban config (this will also happen daily and on reboot)
 
 ## Manual setup for Debian/Ubuntu based installations
-1. wget -O /usr/local/sbin/update-blacklist.sh https://raw.githubusercontent.com/trick77/ipset-blacklist/master/update-blacklist.sh
+1. wget -O /usr/local/sbin/update-blacklist.sh https://raw.githubusercontent.com/rkitover/ipset-blacklist/master/update-blacklist.sh
 2. chmod +x /usr/local/sbin/update-blacklist.sh
-2. mkdir -p /etc/ipset-blacklist ; wget -O /etc/ipset-blacklist/ipset-blacklist.conf https://raw.githubusercontent.com/trick77/ipset-blacklist/master/ipset-blacklist.conf
+2. mkdir -p /etc/ipset-blacklist ; wget -O /etc/ipset-blacklist/ipset-blacklist.conf https://raw.githubusercontent.com/rkitover/ipset-blacklist/master/ipset-blacklist.conf
 2. Modify ipset-blacklist.conf according to your needs. Per default, the blacklisted IP addresses will be saved to /etc/ipset-blacklist/ip-blacklist.restore
 3. apt-get install ipset
 4. Create the ipset blacklist and insert it into your iptables input filter (see below). After proper testing, make sure to persist it in your firewall script or similar or the rules will be lost after the next reboot.

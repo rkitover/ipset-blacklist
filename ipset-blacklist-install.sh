@@ -2,7 +2,7 @@
 
 set -e
 
-GITHUB_ORIGIN=trick77/ipset-blacklist/master
+GITHUB_ORIGIN=rkitover/ipset-blacklist/master
 REQUIRED_PACKAGES='iptables ipset wget curl'
 CONFIG=/etc/ipset-blacklist/ipset-blacklist.conf
 
